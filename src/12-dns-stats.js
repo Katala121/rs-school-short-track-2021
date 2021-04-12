@@ -23,7 +23,6 @@
 function getDNSStats(domains) {
   const dnsStats = {};
   const domainsParse = domains.map((item) => item.split('.'));
-  console.log(domainsParse);
   dnsStats[`.${domainsParse[0][domainsParse[0].length - 1]}`] = domainsParse.reduce((count, item) => {
     let i;
     if (item[item.length - 1] === domainsParse[0][domainsParse[0].length - 1]) i = 1;
@@ -39,7 +38,6 @@ function getDNSStats(domains) {
       let i = 0;
       if (item.length === 3) {
         i = 1;
-        console.log(count);
       }
       return count + i;
     }, 0);
